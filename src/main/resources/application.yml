@@ -1,8 +1,107 @@
-environments:
-  HK:
-    DEV:
-      db: jdbc:mysql://hk-dev-db:3306/mydb
-      sftp: hk-dev-sftp
-    SIT:
-      db: jdbc:mysql://hk-sit-db:3306/mydb
-      sftp: hk-sit-sftp
+server:
+  port: 8080
+
+spring:
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+    mode: HTML
+    cache: false
+
+app:
+  regions:
+    - HK
+    - UK
+    - US
+  environments:
+    - DEV
+    - SIT
+    - UAT
+
+  targets:
+    HK:
+      DEV:
+        dbUrl: jdbc:mysql://hk-dev-db:3306/mydb
+        sftp:
+          host: sftp.hk.dev.server.com
+          port: 22
+          username: deployuser
+          password: deploy@123
+          remotePath: /home/deploy/hk/dev/
+        weblogicPath: /opt/hk/dev/weblogic/deploy
+      SIT:
+        dbUrl: jdbc:mysql://hk-sit-db:3306/mydb
+        sftp:
+          host: sftp.hk.sit.server.com
+          port: 22
+          username: deployuser
+          password: deploy@123
+          remotePath: /home/deploy/hk/sit/
+        weblogicPath: /opt/hk/sit/weblogic/deploy
+      UAT:
+        dbUrl: jdbc:mysql://hk-uat-db:3306/mydb
+        sftp:
+          host: sftp.hk.uat.server.com
+          port: 22
+          username: deployuser
+          password: deploy@123
+          remotePath: /home/deploy/hk/uat/
+        weblogicPath: /opt/hk/uat/weblogic/deploy
+
+    UK:
+      DEV:
+        dbUrl: jdbc:mysql://uk-dev-db:3306/mydb
+        sftp:
+          host: sftp.uk.dev.server.com
+          port: 22
+          username: deployuser
+          password: deploy@123
+          remotePath: /home/deploy/uk/dev/
+        weblogicPath: /opt/uk/dev/weblogic/deploy
+      SIT:
+        dbUrl: jdbc:mysql://uk-sit-db:3306/mydb
+        sftp:
+          host: sftp.uk.sit.server.com
+          port: 22
+          username: deployuser
+          password: deploy@123
+          remotePath: /home/deploy/uk/sit/
+        weblogicPath: /opt/uk/sit/weblogic/deploy
+      UAT:
+        dbUrl: jdbc:mysql://uk-uat-db:3306/mydb
+        sftp:
+          host: sftp.uk.uat.server.com
+          port: 22
+          username: deployuser
+          password: deploy@123
+          remotePath: /home/deploy/uk/uat/
+        weblogicPath: /opt/uk/uat/weblogic/deploy
+
+    US:
+      DEV:
+        dbUrl: jdbc:mysql://us-dev-db:3306/mydb
+        sftp:
+          host: sftp.us.dev.server.com
+          port: 22
+          username: deployuser
+          password: deploy@123
+          remotePath: /home/deploy/us/dev/
+        weblogicPath: /opt/us/dev/weblogic/deploy
+      SIT:
+        dbUrl: jdbc:mysql://us-sit-db:3306/mydb
+        sftp:
+          host: sftp.us.sit.server.com
+          port: 22
+          username: deployuser
+          password: deploy@123
+          remotePath: /home/deploy/us/sit/
+        weblogicPath: /opt/us/sit/weblogic/deploy
+      UAT:
+        dbUrl: jdbc:mysql://us-uat-db:3306/mydb
+        sftp:
+          host: sftp.us.uat.server.com
+          port: 22
+          username: deployuser
+          password: deploy@123
+          remotePath: /home/deploy/us/uat/
+        weblogicPath: /opt/us/uat/weblogic/deploy
