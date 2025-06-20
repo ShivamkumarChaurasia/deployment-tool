@@ -1,0 +1,8 @@
+environments:
+  HK:
+    DEV:
+      db: jdbc:mysql://hk-dev-db:3306/mydb
+      sftp: hk-dev-sftp
+    SIT:
+      db: jdbc:mysql://hk-sit-db:3306/mydb
+      sftp: hk-sit-sftp
